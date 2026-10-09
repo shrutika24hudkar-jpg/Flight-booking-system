@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlyEase | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+        ✈ <span>FlyEase</span>
+    </div>
+
+    <div class="nav-links">
+        <a class="active">Flights</a>
+        <a onclick="showBookings()">My Bookings</a>
+        <button class="logout-btn" onclick="logoutUser()">Logout</button>
+    </div>
+
+</nav>
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="welcome-text">
+                Hello, <span id="userName">Traveler</span> 👋
+            </p>
+
+            <h1>Where do you want to<br><span>fly today?</span></h1>
+
+            <p>
+                Search hundreds of flights and find the best option for your journey.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH BOX -->
+
+    <section class="search-wrapper">
+
+        <div class="trip-tabs">
+
+            <button class="trip-tab active">
+                <span>✈</span> Flights
+            </button>
+
+            <button class="trip-tab">
+                ⇄ Round Trip
+            </button>
+
+            <button class="trip-tab">
+                → One Way
+            </button>
+
+        </div>
+
+        <div class="search-grid">
+
+            <div class="search-field">
+
+                <span class="field-icon">⌖</span>
+
+                <div>
+                    <small>FROM</small>
+                    <select id="fromCity">
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Pune">Pune</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="swap-btn" onclick="swapCities()">⇄</div>
+
+
+            <div class="search-field">
+
+                <span class="field-icon">⌖</span>
+
+                <div>
+                    <small>TO</small>
+                    <select id="toCity">
+                        <option value="Delhi">Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Nagpur">Nagpur</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="search-field">
+
+                <span class="field-icon">📅</span>
+
+                <div>
+                    <small>DEPARTURE</small>
+                    <input type="date" id="travelDate">
+                </div>
+
+            </div>
+
+
+            <div class="search-field">
+
+                <span class="field-icon">👤</span>
+
+                <div>
+                    <small>TRAVELERS</small>
+
+                    <select id="passengers">
+                        <option value="1">1 Passenger</option>
+                        <option value="2">2 Passengers</option>
+                        <option value="3">3 Passengers</option>
+                        <option value="4">4 Passengers</option>
+                        <option value="5">5 Passengers</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button class="search-btn" onclick="searchFlights()">
+                Search Flights
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK OPTIONS -->
+
+    <section class="quick-section">
+
+        <h2>Why book with FlyEase?</h2>
+
+        <div class="benefits">
+
+            <div class="benefit">
+                <div>💰</div>
+                <h3>Best Prices</h3>
+                <p>Compare prices and find great deals.</p>
+            </div>
+
+            <div class="benefit">
+                <div>⚡</div>
+                <h3>Easy Booking</h3>
+                <p>Book your flight in just a few clicks.</p>
+            </div>
+
+            <div class="benefit">
+                <div>🔒</div>
+                <h3>Secure</h3>
+                <p>Your booking information stays protected.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

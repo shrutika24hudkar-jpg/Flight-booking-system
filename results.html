@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlyEase | Search Flights</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+        ✈ <span>FlyEase</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="dashboard.html">Flights</a>
+
+        <a onclick="showBookings()">My Bookings</a>
+
+        <button class="logout-btn" onclick="logoutUser()">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<div class="results-page">
+
+    <!-- SEARCH SUMMARY -->
+
+    <div class="results-header">
+
+        <div>
+
+            <button class="back-btn" onclick="history.back()">
+                ←
+            </button>
+
+            <div class="route-title">
+
+                <h1>
+                    <span id="resultFrom">Nagpur</span>
+                    →
+                    <span id="resultTo">Delhi</span>
+                </h1>
+
+                <p id="resultDate">
+                    Flights available for your journey
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="modify-btn" onclick="location.href='dashboard.html'">
+            Modify Search
+        </button>
+
+    </div>
+
+
+    <div class="results-layout">
+
+
+        <!-- FILTERS -->
+
+        <aside class="filters">
+
+            <div class="filter-heading">
+
+                <h3>Filters</h3>
+
+                <button onclick="clearFilters()">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <h4>Stops</h4>
+
+                <label>
+                    <input type="checkbox" value="0" class="stop-filter">
+                    Non-stop
+                </label>
+
+                <label>
+                    <input type="checkbox" value="1" class="stop-filter">
+                    1 Stop
+                </label>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <h4>Airlines</h4>
+
+                <label>
+                    <input type="checkbox" value="IndiGo" class="airline-filter">
+                    IndiGo
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Air India" class="airline-filter">
+                    Air India
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Vistara" class="airline-filter">
+                    Vistara
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Akasa Air" class="airline-filter">
+                    Akasa Air
+                </label>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <h4>Maximum Price</h4>
+
+                <input
+                    type="range"
+                    min="2000"
+                    max="15000"
+                    value="15000"
+                    id="priceRange"
+                    oninput="updatePrice()"
+                >
+
+                <p>
+                    Up to ₹<span id="priceValue">15000</span>
+                </p>
+
+            </div>
+
+        </aside>
+
+
+        <!-- FLIGHT RESULTS -->
+
+        <section class="flight-results">
+
+            <div class="results-top">
+
+                <div>
+                    <strong id="flightCount">0</strong>
+                    flights found
+                </div>
+
+                <select id="sortFlights" onchange="sortFlights()">
+
+                    <option value="price">
+                        Cheapest
+                    </option>
+
+                    <option value="duration">
+                        Shortest Duration
+                    </option>
+
+                    <option value="departure">
+                        Earliest Departure
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div id="flightList">
+
+                <!-- JS WILL INSERT FLIGHTS HERE -->
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
